@@ -2,7 +2,7 @@
 
 <p *ngIf="!products"><em>Loading</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="products">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="!formEditing">
     <thead>
         <tr>
             <th>Name</th>
@@ -27,6 +27,42 @@
             <td><button>Delete</button></td>
         </tr>
     </tbody>
+    <button (click)="toggleForm()" class="button" >Add New Product</button>
 </table>
 
-<button>Add New Product</button>
+<div class="container">
+     <!--*ngIf="formEditing">-->
+    <form>
+        <div class="row">
+            <h4>New Product</h4>
+            <div class="input-group input-group-icon">
+                <input type="text" placeholder="Product Name" />
+            </div>
+
+            <div class="input-group input-group-icon">
+                <input type="text" placeholder="Quantity" />
+            </div>
+
+            <div class="input-group input-group-icon">
+                <input type="text" placeholder="Price" />
+            </div>
+
+            <div class="input-group input-group-icon">
+                <input type="text" placeholder="Customer Rating" />
+            </div>
+
+            <div class="input-group">
+                <select>
+                    Get categories (coming up soon...)
+                </select>
+            </div>
+
+        </div>
+        <div>
+            <button class="button">Add New Product</button>
+            <button style="margin-left:20px;  background-color:red;" class="button" (click)="toggleForm()">Cancel</button>
+        </div>
+
+    </form>
+</div>
+

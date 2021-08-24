@@ -8,6 +8,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class ProductPageComponent implements OnInit {
   public products: Product[];
+  public formEditing: boolean = false;
   
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<Product[]>(baseUrl + 'products').subscribe(result => {
@@ -15,6 +16,10 @@ export class ProductPageComponent implements OnInit {
     }, error => console.error(error));
   }
   ngOnInit() {
+  }
+
+  toggleForm() {
+    this.formEditing = !this.formEditing;
   }
 
 }
