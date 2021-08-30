@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductInputFormComponent } from './product-input-form/product-input-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ProductInputFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
