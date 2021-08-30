@@ -36,6 +36,7 @@ namespace InventMS.Controllers
         public Models.Product GetProduct(int id)
         {
             var product = DataAccessProvider.GetProductById(id);
+
             product.Manufacturer = DataAccessProvider.GetManufacturerById(product.ManufacturerId);
             product.Category = DataAccessProvider.GetCategoryById(product.CategoryId);
             return product;
